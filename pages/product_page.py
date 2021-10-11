@@ -23,3 +23,11 @@ class ProductPage(BasePage):
         book_price = self.browser.find_element(*CartLocators.BOOK_PRICE).text
         book_price_in_message = self.browser.find_element(*CartLocators.BOOK_PRICE_IN_MESSAGE).text
         assert book_price == book_price_in_message, 'No message about the cost of the price, or the price is incorrect'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*CartLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_dissapear_of_success_message(self):
+        assert self.is_disappeared(*CartLocators.SUCCESS_MESSAGE), \
+            'The success message did not disappear, but it should have'
