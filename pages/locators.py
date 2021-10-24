@@ -1,13 +1,16 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
-class LoginPageLocators:
-    LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
-    REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
+class BasketPageLocators:
+    BASKET_LINK = (By.CSS_SELECTOR, 'a[class="btn btn-default"]')
+    PRODUCT_IN_BASKET_PRESENCE = (By.CSS_SELECTOR, '#basket_formset')
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner>p')
 
 
 class CartLocators:
@@ -19,13 +22,14 @@ class CartLocators:
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, '.alert:nth-child(1)')
 
 
-class BasePageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+class LoginPageLocators:
+    LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
+    REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
+    REGISTER_NEW_USER_EMAIL = (By.CSS_SELECTOR, '#id_registration-email')
+    REGISTER_NEW_USER_PASSWORD = (By.CSS_SELECTOR, '#id_registration-password1')
+    REGISTER_NEW_USER_PASSWORD_CONFIRM = (By.CSS_SELECTOR, '#id_registration-password2')
+    REGISTER_NEW_USER_BUTTON_SUBMIT = (By.CSS_SELECTOR, 'button[name="registration_submit"]')
 
 
-class BasketPageLocators:
-    BASKET_LINK = (By.CSS_SELECTOR, 'a[class="btn btn-default"]')
-    PRODUCT_IN_BASKET_PRESENCE = (By.CSS_SELECTOR, '#basket_formset')
-    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner>p')
-
+class MainPageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
